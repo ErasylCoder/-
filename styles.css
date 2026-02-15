@@ -82,6 +82,15 @@ h2 { color: #1b6a36; }
 .phrase:nth-child(2) { animation-delay: .15s; }
 .phrase:nth-child(3) { animation-delay: .3s; }
 
+.news-card { position: relative; overflow: hidden; }
+.news-card .tag { display:inline-block; background:#18703a; color:#fff; font-weight:700; font-size:.75rem; padding:.2rem .5rem; border-radius:999px; margin-bottom:.45rem; }
+.news-card::after { content:''; position:absolute; inset:auto -40% -40% auto; width:160px; height:160px; background:radial-gradient(circle, rgba(46,165,71,.12), transparent 65%); }
+
+.faq-list { display:grid; gap:.65rem; }
+.faq-item { border:1px solid #dbeee0; border-radius:14px; background:#fff; padding:.2rem .8rem; }
+.faq-item summary { cursor:pointer; font-weight:800; padding:.55rem 0; }
+.faq-item p { margin:.1rem 0 .7rem; color:var(--muted); }
+
 .form-grid { display: grid; gap: .75rem; }
 .form-grid label { display: grid; gap: .35rem; font-weight: 700; }
 input, select {
