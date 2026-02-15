@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoBala — Games</title>
+  <title>EcoBala - Games</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html">🌿 <span>EcoBala</span></a><nav><a href="index.html" data-i18n="navHome">Главная</a><a href="tasks.html" data-i18n="navTasks">Задачи</a><a href="register.html" data-i18n="navRegister">Регистрация</a><a href="admin.html" data-i18n="navAdmin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
 <main class="container panel">
   <h1 data-i18n="gamesTitle">Логические эко-игры</h1>
   <div class="grid two">
     <section class="card">
-      <h3 data-i18n="g1t">Игра: Что перерабатывается?</h3>
-      <p data-i18n="g1d">Выберите предмет, который можно сдать в переработку.</p>
+      <h3>Recycling check</h3>
+      <p>Choose an item that can be recycled.</p>
       <div class="actions">
         <button class="btn btn-secondary guess" data-ok="1">Plastic bottle</button>
         <button class="btn btn-secondary guess" data-ok="0">Dirty napkin</button>
@@ -24,8 +25,8 @@
     </section>
 
     <section class="card">
-      <h3 data-i18n="g2t">Логическая задача: Экономия воды</h3>
-      <p data-i18n="g2d">Если закрывать кран во время чистки зубов, можно сэкономить:</p>
+      <h3>Water logic</h3>
+      <p>How much water can be saved while brushing teeth?</p>
       <div class="actions">
         <button class="btn btn-primary answer" data-a="0">1 liter</button>
         <button class="btn btn-primary answer" data-a="1">up to 10 liters</button>
@@ -35,14 +36,10 @@
     </section>
   </div>
 </main>
-<nav class="mobile-nav">
-  <a href="index.html" data-i18n="mobileHome">Главная</a>
-  <a href="tasks.html" data-i18n="navTasks">Задачи</a>
-  <a href="games.html" class="active" data-i18n="navGames">Игры</a>
-  <a href="register.html" data-i18n="navRegister">Регистрация</a>
-</nav>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav>
 <script src="database.js"></script>
 <script src="i18n.js"></script>
 <script src="games.js"></script>
+<script>logActivity('Open games page');</script>
 </body>
 </html>

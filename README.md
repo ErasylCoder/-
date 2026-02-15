@@ -1,32 +1,30 @@
-# EcoBala — Multilingual Adaptive Eco Platform
+# EcoBala — responsive multilingual school eco platform
 
-Updated prototype with a beautiful responsive design, multilingual UI (RU/EN/KZ), admin panel, registration zone, tasks, games and photo reports.
+Updated web prototype with improved UI, adaptive layout, registration-first flow, admin monitoring and director dashboard.
 
-## Implemented
+## What is implemented
 
-- Fully adaptive interface for desktop/tablet/mobile.
-- Modern typography (`Manrope`, `Nunito`) and refreshed CSS across all pages.
-- Multilingual switcher (Russian, English, Kazakh).
-- Mobile bottom navigation with **Home** item.
-- Registration page with local DB (`localStorage`).
-- Tasks page with image upload and local photo report saving.
-- Games page with logic mini-games.
-- Admin panel for users and reports monitoring.
-- Removed the previous “Ecological contribution today” block from homepage.
+- Registration-first entry page (`index.html`) with modern hero layout and EcoBala emblem.
+- Logo + favicon added via `assets/ecobala-logo.svg` and `assets/favicon.svg`.
+- Fully adaptive responsive layout for monitor, laptop, tablet and phone.
+- RU / EN / KZ translations with language switcher (`i18n.js`).
+- Admin dashboard with PIN gate (`2026`) and full monitoring:
+  - users,
+  - reports,
+  - activity timeline (who did what and when).
+- Director page with city selection and Chromtau schools list:
+  - Chromtau School №1 ... Chromtau School №7.
+- Registration data, tasks, reports and activity logs stored in browser LocalStorage.
+- Founder line added at the top: **CEO Amirtay.E, Ermukhanov.M**.
 
 ## Pages
 
-- `index.html` — home page.
-- `register.html` — registration.
-- `tasks.html` — tasks and photo upload.
+- `index.html` — main + registration first screen.
+- `register.html` — dedicated registration page.
+- `tasks.html` — tasks and photo reports.
 - `games.html` — logic games.
-- `admin.html` — admin panel.
-
-## Scripts
-
-- `database.js` — local data storage layer.
-- `i18n.js` — multilingual translation layer.
-- `register.js`, `tasks.js`, `games.js`, `admin.js` — page logic.
+- `admin.html` — admin-only monitoring panel.
+- `director.html` — school director view.
 
 ## Run
 

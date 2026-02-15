@@ -8,32 +8,28 @@ function msg(okRu, badRu, okEn, badEn, okKz, badKz, isOk) {
   return isOk ? okRu : badRu;
 }
 
-document.querySelectorAll('.guess').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const isOk = btn.dataset.ok === '1';
+document.querySelectorAll('.guess').forEach((button) => {
+  button.addEventListener('click', () => {
+    const isOk = button.dataset.ok === '1';
     guessResult.textContent = msg(
-      '✅ Верно! Пластик можно перерабатывать.',
-      '❌ Неверно. Попробуй ещё.',
-      '✅ Correct! Plastic can be recycled.',
-      '❌ Wrong. Try again.',
-      '✅ Дұрыс! Пластикті қайта өңдеуге болады.',
-      '❌ Қате. Қайта көріңіз.',
+      '✅ Верно! Пластик можно перерабатывать.', '❌ Неверно. Попробуй ещё.',
+      '✅ Correct! Plastic can be recycled.', '❌ Wrong. Try again.',
+      '✅ Дұрыс! Пластикті қайта өңдеуге болады.', '❌ Қате. Қайта көріңіз.',
       isOk
     );
+    logActivity('Play recycle game', { correct: isOk });
   });
 });
 
-document.querySelectorAll('.answer').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const isOk = btn.dataset.a === '1';
+document.querySelectorAll('.answer').forEach((button) => {
+  button.addEventListener('click', () => {
+    const isOk = button.dataset.a === '1';
     answerResult.textContent = msg(
-      '✅ Отлично! Это помогает беречь воду.',
-      '❌ Неправильно. Экономия значительно выше.',
-      '✅ Great! This helps save water.',
-      '❌ Not correct. Real saving is much higher.',
-      '✅ Тамаша! Бұл суды үнемдеуге көмектеседі.',
-      '❌ Дұрыс емес. Нақты үнемдеу әлдеқайда көп.',
+      '✅ Отлично! Это помогает беречь воду.', '❌ Неправильно. Экономия выше.',
+      '✅ Great! This helps save water.', '❌ Not correct. Real saving is higher.',
+      '✅ Тамаша! Бұл суды үнемдейді.', '❌ Дұрыс емес. Нақты үнемдеу көп.',
       isOk
     );
+    logActivity('Play water game', { correct: isOk });
   });
 });

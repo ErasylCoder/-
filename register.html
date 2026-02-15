@@ -3,38 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoBala — Registration</title>
+  <title>EcoBala - Registration</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar"><div class="container nav"><a class="brand" href="index.html">🌿 <span>EcoBala</span></a><nav><a href="index.html" data-i18n="navHome">Главная</a><a href="tasks.html" data-i18n="navTasks">Задачи</a><a href="games.html" data-i18n="navGames">Игры</a><a href="admin.html" data-i18n="navAdmin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
-  <main class="container panel">
-    <h1 data-i18n="regTitle">Регистрация</h1>
-    <p class="muted" data-i18n="regHint">Данные сохраняются в локальной базе браузера (LocalStorage) для демо-режима.</p>
-    <form id="registerForm" class="card form-grid register-box">
-      <label><span data-i18n="name">Имя ученика</span><input required name="name" /></label>
-      <label><span data-i18n="age">Возраст</span><input required name="age" type="number" min="7" max="17" /></label>
-      <label><span data-i18n="role">Роль</span>
-        <select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select>
-      </label>
-      <label><span data-i18n="school">Школа</span><input required name="school" /></label>
-      <label><span data-i18n="city">Город</span><input required name="city" /></label>
-      <button class="btn btn-primary" type="submit" data-i18n="registerBtn">Зарегистрироваться</button>
-    </form>
-    <section class="card" style="margin-top:1rem">
-      <h3 data-i18n="users">Зарегистрированные участники</h3>
-      <ul id="usersList" class="quests"></ul>
-    </section>
-  </main>
-  <nav class="mobile-nav">
-    <a href="index.html" data-i18n="mobileHome">Главная</a>
-    <a href="tasks.html" data-i18n="navTasks">Задачи</a>
-    <a href="games.html" data-i18n="navGames">Игры</a>
-    <a href="register.html" class="active" data-i18n="navRegister">Регистрация</a>
-  </nav>
-  <script src="database.js"></script>
-  <script src="i18n.js"></script>
-  <script src="register.js"></script>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+
+<main class="container panel">
+  <h1 data-i18n="regTitle">Зона регистрации</h1>
+  <p class="muted" data-i18n="regHint">Красивый безопасный вход для учеников 7–17 лет.</p>
+  <form id="registerForm" class="card form-grid register-box">
+    <label><span data-i18n="name">Имя ученика</span><input required name="name" /></label>
+    <label><span data-i18n="age">Возраст</span><input required name="age" type="number" min="7" max="17" /></label>
+    <label><span data-i18n="role">Роль</span><select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select></label>
+    <label><span data-i18n="city">Город</span><select id="citySelect" name="city"><option value="Chromtau">Chromtau / Хромтау</option></select></label>
+    <label><span data-i18n="school">Школа</span><select id="schoolSelect" name="school"></select></label>
+    <button class="btn btn-primary" type="submit" data-i18n="submit">Зарегистрироваться</button>
+  </form>
+  <section class="card" style="margin-top:1rem"><h3 data-i18n="users">Участники</h3><ul id="usersList" class="quests"></ul></section>
+</main>
+
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav>
+
+<script src="database.js"></script>
+<script src="i18n.js"></script>
+<script src="register.js"></script>
+<script>logActivity('Open registration page');</script>
 </body>
 </html>

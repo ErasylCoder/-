@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoBala</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
@@ -12,59 +13,47 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="index.html">🌿 <span>EcoBala</span></a>
+      <a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="EcoBala logo" /><span>EcoBala</span></a>
       <nav>
-        <a href="#student" data-i18n="navStudent">Ученику</a>
-        <a href="#map" data-i18n="navMap">Карта KZ</a>
-        <a href="tasks.html" data-i18n="navTasks">Задачи</a>
-        <a href="games.html" data-i18n="navGames">Игры</a>
-        <a href="register.html" data-i18n="navRegister">Регистрация</a>
-        <a href="admin.html" data-i18n="navAdmin">Админ</a>
+        <a href="index.html" data-i18n="home">Главная</a>
+        <a href="tasks.html" data-i18n="tasks">Задачи</a>
+        <a href="games.html" data-i18n="games">Игры</a>
+        <a href="director.html" data-i18n="director">Директор</a>
+        <a href="admin.html" data-i18n="admin">Админ</a>
       </nav>
-      <div class="tools">
-        <div class="lang-switch">
-          <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="kz">KZ</button>
-        </div>
-        <a class="btn btn-primary" href="register.html" data-i18n="join">Присоединиться</a>
-      </div>
+      <div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div>
     </div>
   </header>
 
-  <main>
-    <section class="hero container">
-      <div>
-        <p class="chip" data-i18n="chip">Единая экосистема школ Казахстана</p>
-        <h1 data-i18n="heroTitle">Играй, помогай природе и зарабатывай баллы</h1>
-        <p class="muted" data-i18n="heroText">EcoBala развивает экологическую культуру, ответственность и полезные привычки через задания, рейтинги и образовательные игры.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="tasks.html" data-i18n="goTasks">Перейти к заданиям</a>
-          <a class="btn btn-secondary" href="games.html" data-i18n="goGames">Открыть игры</a>
-        </div>
-      </div>
-      <div class="hero-card card">
-        <h3 data-i18n="removeTitle">Почему EcoBala нравится школам</h3>
-        <p class="muted" data-i18n="removeText">Красивый, быстрый и удобный интерфейс для детей, учителей и администрации.</p>
-        <div class="badge-wrap">
-          <span class="badge">🎯 Gamification</span>
-          <span class="badge">📱 Responsive</span>
-          <span class="badge">🌍 Multilanguage</span>
-        </div>
-      </div>
+  <main class="container">
+    <section class="founders card center">
+      <p data-i18n="founders">Основатели / CEO: Amirtay.E, Ermukhanov.M</p>
     </section>
 
-    <section id="student" class="container panel">
-      <h2 data-i18n="features">Что есть в платформе</h2>
-      <div class="grid three">
-        <article class="card"><h4 data-i18n="f1t">Кабинет ученика</h4><p data-i18n="f1d">Баллы, достижения, виртуальная валюта и история отчётов.</p></article>
-        <article class="card"><h4 data-i18n="f2t">Панель школы</h4><p data-i18n="f2d">Статистика школы, рейтинг района и сравнение с другими.</p></article>
-        <article class="card"><h4 data-i18n="f3t">Игровое обучение</h4><p data-i18n="f3d">Логические игры и сценарии про воду, мусор, воздух и энергию.</p></article>
-      </div>
+    <section class="hero grid two">
+      <article class="card">
+        <p class="chip" data-i18n="brandSlogan">Маленькие шаги к большому будущему</p>
+        <h1 data-i18n="firstTitle">Сначала регистрация — затем доступ к платформе</h1>
+        <p class="muted" data-i18n="firstText">Заполните форму, чтобы начать эко-квесты и попасть в рейтинг школы.</p>
+        <img class="hero-logo" src="assets/ecobala-logo.svg" alt="EcoBala emblem" />
+      </article>
+
+      <article class="card register-panel">
+        <h2 data-i18n="regTitle">Зона регистрации</h2>
+        <p class="muted" data-i18n="regHint">Красивый безопасный вход для учеников 7–17 лет.</p>
+        <form id="registerForm" class="form-grid">
+          <label><span data-i18n="name">Имя ученика</span><input name="name" required /></label>
+          <label><span data-i18n="age">Возраст</span><input name="age" type="number" min="7" max="17" required /></label>
+          <label><span data-i18n="role">Роль</span><select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select></label>
+          <label><span data-i18n="city">Город</span><select id="citySelect" name="city" required><option value="Chromtau">Chromtau / Хромтау</option></select></label>
+          <label><span data-i18n="school">Школа</span><select id="schoolSelect" name="school" required></select></label>
+          <button class="btn btn-primary" type="submit" data-i18n="submit">Зарегистрироваться</button>
+        </form>
+      </article>
     </section>
 
-    <section id="map" class="container panel">
-      <h2 data-i18n="mapTitle">Карта Казахстана с активностью</h2>
+    <section class="panel">
+      <h2 data-i18n="mapTitle">Карта активности Казахстана</h2>
       <div class="card">
         <svg class="kz-map" viewBox="0 0 900 420" role="img" aria-label="Kazakhstan map">
           <path d="M44 220 L118 190 L180 138 L286 138 L364 82 L458 98 L538 70 L608 94 L734 68 L818 112 L862 178 L814 250 L746 292 L628 280 L560 328 L452 332 L368 302 L250 314 L150 282 Z"/>
@@ -73,36 +62,22 @@
           <circle cx="220" cy="300" r="10" class="city-dot"/><text x="235" y="305">Shymkent</text>
           <circle cx="420" cy="315" r="10" class="city-dot"/><text x="435" y="320">Almaty</text>
         </svg>
-        <p class="muted" data-i18n="mapDesc">Карта показывает ключевые города и развитие эко-движения.</p>
-      </div>
-    </section>
-
-    <section class="container panel">
-      <h2 data-i18n="quick">Быстрый старт</h2>
-      <div class="grid two">
-        <article class="card">
-          <h3 data-i18n="q1">Регистрация с локальной БД</h3>
-          <p data-i18n="q1d">Создайте аккаунт и сохраните данные в базе браузера.</p>
-          <a class="btn btn-primary" href="register.html" data-i18n="navRegister">Регистрация</a>
-        </article>
-        <article class="card">
-          <h3 data-i18n="q2">Задачи и фото-отчеты</h3>
-          <p data-i18n="q2d">Загружайте фото выполненных дел и копите баллы.</p>
-          <a class="btn btn-secondary" href="tasks.html" data-i18n="navTasks">Задачи</a>
-        </article>
+        <p class="muted" data-i18n="mapDesc">Ключевые города и вклад школьников в экологию.</p>
       </div>
     </section>
   </main>
 
   <nav class="mobile-nav">
-    <a href="index.html" class="active" data-i18n="mobileHome">Главная</a>
-    <a href="tasks.html" data-i18n="navTasks">Задачи</a>
-    <a href="games.html" data-i18n="navGames">Игры</a>
-    <a href="register.html" data-i18n="navRegister">Регистрация</a>
+    <a href="index.html" class="active" data-i18n="home">Главная</a>
+    <a href="tasks.html" data-i18n="tasks">Задачи</a>
+    <a href="director.html" data-i18n="director">Директор</a>
+    <a href="admin.html" data-i18n="admin">Админ</a>
   </nav>
 
   <footer><div class="container"><p data-i18n="footer">EcoBala · Казахстан</p></div></footer>
   <script src="database.js"></script>
   <script src="i18n.js"></script>
+  <script src="register.js"></script>
+  <script>logActivity('Open index page');</script>
 </body>
 </html>

@@ -6,41 +6,45 @@ const previewWrap = document.getElementById('previewWrap');
 
 const tasks = getTasks();
 
-tasksGrid.innerHTML = tasks.map((t) => `
+tasksGrid.innerHTML = tasks.map((task) => `
   <article class="card">
-    <h3>${t.title}</h3>
-    <p>${t.topic} · ${t.level}</p>
-    <p class="big">+${t.points}</p>
+    <h3>${task.title}</h3>
+    <p>${task.topic} · ${task.level}</p>
+    <p class="big">+${task.points}</p>
   </article>
 `).join('');
 
-taskSelect.innerHTML = tasks.map((t) => `<option value="${t.id}">${t.title}</option>`).join('');
+taskSelect.innerHTML = tasks.map((task) => `<option value="${task.id}">${task.title}</option>`).join('');
 
-photoInput?.addEventListener('change', (e) => {
-  const file = e.target.files?.[0];
+photoInput?.addEventListener('change', (event) => {
+  const file = event.target.files?.[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = () => {
-    previewWrap.innerHTML = `<img src="${reader.result}" alt="Фото-отчет" class="preview-img"/>`;
+    previewWrap.innerHTML = `<img src="${reader.result}" alt="report" class="preview-img"/>`;
   };
   reader.readAsDataURL(file);
 });
 
-reportForm?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const fd = new FormData(reportForm);
-  const photo = photoInput.files?.[0];
-  if (!photo) return;
+reportForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(reportForm);
+  const file = photoInput.files?.[0];
+  if (!file) return;
+
   const reader = new FileReader();
   reader.onload = () => {
-    saveReport({
-      taskId: Number(fd.get('taskId')),
-      comment: fd.get('comment'),
-      photoBase64: reader.result
-    });
+    const report = {
+      taskId: Number(formData.get('taskId')),
+      comment: String(formData.get('comment') || ''),
+      photoBase64: reader.result,
+      userId: getSessionUser()?.id || null
+    };
+    saveReport(report);
+    logActivity('Upload report', { taskId: report.taskId, comment: report.comment });
     alert(t('done'));
     reportForm.reset();
     previewWrap.innerHTML = '';
   };
-  reader.readAsDataURL(photo);
+  reader.readAsDataURL(file);
 });

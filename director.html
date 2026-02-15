@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala - Director</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="admin.html" data-i18n="admin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<main class="container panel">
+  <h1 data-i18n="directorTitle">Панель директора</h1>
+  <p class="muted" data-i18n="directorDesc">Контроль экопроцессов по школе и городу.</p>
+
+  <section class="card form-grid register-box">
+    <label><span data-i18n="chooseCity">Выберите город</span>
+      <select id="directorCity"><option value="Chromtau">Chromtau / Хромтау</option></select>
+    </label>
+  </section>
+
+  <section class="card" style="margin-top:1rem">
+    <h3 data-i18n="chromtauSchools">Школы города Хромтау (7 школ)</h3>
+    <ul id="schoolList" class="quests"></ul>
+  </section>
+
+  <section class="grid three" style="margin-top:1rem">
+    <article class="card"><h3>Active students</h3><p id="dUsers" class="big">0</p></article>
+    <article class="card"><h3>Uploaded reports</h3><p id="dReports" class="big">0</p></article>
+    <article class="card"><h3>Recent events</h3><p id="dLogs" class="big">0</p></article>
+  </section>
+</main>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" class="active" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav>
+<script src="database.js"></script>
+<script src="i18n.js"></script>
+<script src="director.js"></script>
+<script>logActivity('Open director page');</script>
+</body>
+</html>
