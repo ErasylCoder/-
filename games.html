@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala — Игры</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><div class="brand">🌿 <span>EcoBala</span></div><nav><a href="index.html">Главная</a><a href="tasks.html">Задачи</a><a href="register.html">Регистрация</a></nav></div></header>
+<main class="container panel">
+  <h1>Логические эко-игры</h1>
+  <div class="grid two">
+    <section class="card">
+      <h3>Игра: Что перерабатывается?</h3>
+      <p>Выберите предмет, который можно сдать в переработку.</p>
+      <div class="actions">
+        <button class="btn btn-secondary guess" data-ok="1">Пластиковая бутылка</button>
+        <button class="btn btn-secondary guess" data-ok="0">Грязная салфетка</button>
+        <button class="btn btn-secondary guess" data-ok="0">Смешанный мусор</button>
+      </div>
+      <p id="guessResult" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h3>Логическая задача: Экономия воды</h3>
+      <p>Если закрывать кран во время чистки зубов, можно сэкономить:</p>
+      <div class="actions">
+        <button class="btn btn-primary answer" data-a="0">1 литр</button>
+        <button class="btn btn-primary answer" data-a="1">до 10 литров</button>
+        <button class="btn btn-primary answer" data-a="0">0 литров</button>
+      </div>
+      <p id="answerResult" class="muted"></p>
+    </section>
+  </div>
+</main>
+<script src="games.js"></script>
+</body>
+</html>
