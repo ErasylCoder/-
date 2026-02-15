@@ -9,19 +9,19 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="admin.html" data-i18n="admin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
 <main class="container panel">
   <h1 data-i18n="directorTitle">Панель директора</h1>
-  <p class="muted" data-i18n="directorDesc">Контроль экопроцессов по школе и городу.</p>
+  <p class="muted" data-i18n="directorDesc">Контроль активности школы и города.</p>
 
   <section class="card form-grid register-box">
     <label><span data-i18n="chooseCity">Выберите город</span>
-      <select id="directorCity"><option value="Chromtau">Chromtau / Хромтау</option></select>
+      <select id="directorCity"><option value="Chromtau">Хромтау</option></select>
     </label>
   </section>
 
   <section class="card" style="margin-top:1rem">
-    <h3 data-i18n="chromtauSchools">Школы города Хромтау (7 школ)</h3>
+    <h3 data-i18n="schools">Школы Хромтау (№1–№7)</h3>
     <ul id="schoolList" class="quests"></ul>
   </section>
 
@@ -31,7 +31,7 @@
     <article class="card"><h3>Recent events</h3><p id="dLogs" class="big">0</p></article>
   </section>
 </main>
-<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" class="active" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" class="active" data-i18n="director">Директор</a></nav>
 <script src="database.js"></script>
 <script src="i18n.js"></script>
 <script src="director.js"></script>

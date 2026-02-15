@@ -19,41 +19,56 @@
         <a href="tasks.html" data-i18n="tasks">Задачи</a>
         <a href="games.html" data-i18n="games">Игры</a>
         <a href="director.html" data-i18n="director">Директор</a>
-        <a href="admin.html" data-i18n="admin">Админ</a>
       </nav>
       <div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div>
     </div>
   </header>
 
   <main class="container">
-    <section class="founders card center">
-      <p data-i18n="founders">Основатели / CEO: Amirtay.E, Ermukhanov.M</p>
-    </section>
+    <section class="founders card center"><p data-i18n="founders">Основатели / CEO: Amirtay.E, Ermukhanov.M</p></section>
 
     <section class="hero grid two">
       <article class="card">
-        <p class="chip" data-i18n="brandSlogan">Маленькие шаги к большому будущему</p>
-        <h1 data-i18n="firstTitle">Сначала регистрация — затем доступ к платформе</h1>
-        <p class="muted" data-i18n="firstText">Заполните форму, чтобы начать эко-квесты и попасть в рейтинг школы.</p>
+        <p class="chip" data-i18n="slogan">Маленькие шаги к большому будущему</p>
+        <h1 data-i18n="heroTitle">EcoBala — платформа для умных и добрых экопривычек</h1>
+        <p class="muted" data-i18n="heroText">Ученики, родители и учителя объединяются ради чистого и здорового будущего.</p>
         <img class="hero-logo" src="assets/ecobala-logo.svg" alt="EcoBala emblem" />
       </article>
 
       <article class="card register-panel">
-        <h2 data-i18n="regTitle">Зона регистрации</h2>
-        <p class="muted" data-i18n="regHint">Красивый безопасный вход для учеников 7–17 лет.</p>
+        <h2 data-i18n="regTitle">Регистрация</h2>
+        <p class="muted" data-i18n="regHint">Заполните данные и начните путь эко-героя.</p>
         <form id="registerForm" class="form-grid">
           <label><span data-i18n="name">Имя ученика</span><input name="name" required /></label>
           <label><span data-i18n="age">Возраст</span><input name="age" type="number" min="7" max="17" required /></label>
           <label><span data-i18n="role">Роль</span><select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select></label>
-          <label><span data-i18n="city">Город</span><select id="citySelect" name="city" required><option value="Chromtau">Chromtau / Хромтау</option></select></label>
+          <label><span data-i18n="city">Город</span><select id="citySelect" name="city" required><option value="Chromtau">Хромтау</option></select></label>
           <label><span data-i18n="school">Школа</span><select id="schoolSelect" name="school" required></select></label>
-          <button class="btn btn-primary" type="submit" data-i18n="submit">Зарегистрироваться</button>
+          <button class="btn btn-primary" type="submit" data-i18n="submit">Начать путь</button>
         </form>
       </article>
     </section>
 
     <section class="panel">
-      <h2 data-i18n="mapTitle">Карта активности Казахстана</h2>
+      <h2 data-i18n="studentsTitle">Счастливые ученики и учителя</h2>
+      <div class="grid three photo-grid">
+        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="happy students" /></article>
+        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80" alt="teacher with students" /></article>
+        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80" alt="school kids" /></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="phraseTitle">Фразы будущего</h2>
+      <div class="phrases">
+        <div class="phrase" data-i18n="phrase1">Маленькие шаги сегодня — чистая планета завтра.</div>
+        <div class="phrase" data-i18n="phrase2">Каждое доброе дело делает будущее светлее.</div>
+        <div class="phrase" data-i18n="phrase3">Экология — это стиль жизни нового поколения.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 data-i18n="mapTitle">Карта экологической активности</h2>
       <div class="card">
         <svg class="kz-map" viewBox="0 0 900 420" role="img" aria-label="Kazakhstan map">
           <path d="M44 220 L118 190 L180 138 L286 138 L364 82 L458 98 L538 70 L608 94 L734 68 L818 112 L862 178 L814 250 L746 292 L628 280 L560 328 L452 332 L368 302 L250 314 L150 282 Z"/>
@@ -62,7 +77,7 @@
           <circle cx="220" cy="300" r="10" class="city-dot"/><text x="235" y="305">Shymkent</text>
           <circle cx="420" cy="315" r="10" class="city-dot"/><text x="435" y="320">Almaty</text>
         </svg>
-        <p class="muted" data-i18n="mapDesc">Ключевые города и вклад школьников в экологию.</p>
+        <p class="muted" data-i18n="mapDesc">Казахстан объединяется ради зеленого будущего.</p>
       </div>
     </section>
   </main>
@@ -70,8 +85,8 @@
   <nav class="mobile-nav">
     <a href="index.html" class="active" data-i18n="home">Главная</a>
     <a href="tasks.html" data-i18n="tasks">Задачи</a>
+    <a href="games.html" data-i18n="games">Игры</a>
     <a href="director.html" data-i18n="director">Директор</a>
-    <a href="admin.html" data-i18n="admin">Админ</a>
   </nav>
 
   <footer><div class="container"><p data-i18n="footer">EcoBala · Казахстан</p></div></footer>

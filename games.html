@@ -9,34 +9,34 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
 <main class="container panel">
-  <h1 data-i18n="gamesTitle">Логические эко-игры</h1>
+  <h1 data-i18n="gamesTitle">Игры и головоломки</h1>
   <div class="grid two">
     <section class="card">
-      <h3>Recycling check</h3>
-      <p>Choose an item that can be recycled.</p>
+      <h3>Recycling challenge</h3>
+      <p>Choose the item that should go to recycling.</p>
       <div class="actions">
         <button class="btn btn-secondary guess" data-ok="1">Plastic bottle</button>
         <button class="btn btn-secondary guess" data-ok="0">Dirty napkin</button>
-        <button class="btn btn-secondary guess" data-ok="0">Mixed trash</button>
+        <button class="btn btn-secondary guess" data-ok="0">Food waste</button>
       </div>
       <p id="guessResult" class="muted"></p>
     </section>
 
-    <section class="card">
-      <h3>Water logic</h3>
-      <p>How much water can be saved while brushing teeth?</p>
-      <div class="actions">
-        <button class="btn btn-primary answer" data-a="0">1 liter</button>
-        <button class="btn btn-primary answer" data-a="1">up to 10 liters</button>
-        <button class="btn btn-primary answer" data-a="0">0 liters</button>
+    <section class="card puzzle-card">
+      <h3 data-i18n="puzzleTitle">Головоломка: собери путь к чистому будущему</h3>
+      <p>Нажмите блоки в правильном порядке: Water → Trees → Clean City</p>
+      <div class="puzzle-grid" id="puzzleGrid">
+        <button class="puzzle-piece" data-step="2">🌳 Trees</button>
+        <button class="puzzle-piece" data-step="1">💧 Water</button>
+        <button class="puzzle-piece" data-step="3">🏙️ Clean City</button>
       </div>
-      <p id="answerResult" class="muted"></p>
+      <p id="puzzleStatus" class="muted"></p>
     </section>
   </div>
 </main>
-<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a><a href="admin.html" data-i18n="admin">Админ</a></nav>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" class="active" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a></nav>
 <script src="database.js"></script>
 <script src="i18n.js"></script>
 <script src="games.js"></script>

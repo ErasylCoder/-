@@ -1,30 +1,27 @@
-# EcoBala — responsive multilingual school eco platform
+# EcoBala — production-style adaptive eco platform
 
-Updated web prototype with improved UI, adaptive layout, registration-first flow, admin monitoring and director dashboard.
+Updated version with polished UI, responsive layout for all devices, animated puzzle games, private admin access and director analytics.
 
-## What is implemented
+## Implemented
 
-- Registration-first entry page (`index.html`) with modern hero layout and EcoBala emblem.
-- Logo + favicon added via `assets/ecobala-logo.svg` and `assets/favicon.svg`.
-- Fully adaptive responsive layout for monitor, laptop, tablet and phone.
-- RU / EN / KZ translations with language switcher (`i18n.js`).
-- Admin dashboard with PIN gate (`2026`) and full monitoring:
-  - users,
-  - reports,
-  - activity timeline (who did what and when).
-- Director page with city selection and Chromtau schools list:
-  - Chromtau School №1 ... Chromtau School №7.
-- Registration data, tasks, reports and activity logs stored in browser LocalStorage.
-- Founder line added at the top: **CEO Amirtay.E, Ermukhanov.M**.
+- Modern responsive design for phone, tablet, laptop and large monitor.
+- Registration-first landing experience.
+- Added EcoBala emblem and favicon.
+- Added motivational animated eco phrases and happy student/teacher photo section.
+- City/school setup for Chromtau with school list №1 ... №7 (including №5 and №6).
+- Puzzle game with animations + recycling mini-game.
+- Private admin panel with password access (`52295229`).
+- Director dashboard with school-level monitoring.
+- Activity tracking: who did what and when (for admin view).
+- RU / EN / KZ multilingual interface.
 
 ## Pages
 
-- `index.html` — main + registration first screen.
-- `register.html` — dedicated registration page.
-- `tasks.html` — tasks and photo reports.
-- `games.html` — logic games.
-- `admin.html` — admin-only monitoring panel.
-- `director.html` — school director view.
+- `index.html` — main landing + registration.
+- `tasks.html` — tasks + photo reports.
+- `games.html` — game/puzzle page.
+- `director.html` — director analytics page.
+- `admin.html` — private admin panel.
 
 ## Run
 

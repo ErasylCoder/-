@@ -17,7 +17,7 @@ function renderAdmin() {
     : `<li><span>${t('noUsers')}</span><b>—</b></li>`;
 
   document.getElementById('activityList').innerHTML = logs.length
-    ? logs.slice(0, 60).map((l) => `<li><span>${new Date(l.time).toLocaleString()} · ${l.userName} · ${l.action}</span><b>${l.page}</b></li>`).join('')
+    ? logs.slice(0, 80).map((l) => `<li><span>${new Date(l.time).toLocaleString()} · ${l.userName} · ${l.action}</span><b>${l.page}</b></li>`).join('')
     : '<li><span>No activity yet</span><b>—</b></li>';
 
   document.getElementById('adminReports').innerHTML = reports.length
@@ -25,13 +25,15 @@ function renderAdmin() {
     : '<p class="muted">No reports yet.</p>';
 }
 
-pinForm?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (pinInput.value === '2026') {
+pinForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (pinInput.value === '52295229') {
     gate.classList.add('hidden');
     content.classList.remove('hidden');
     renderAdmin();
+    logActivity('Admin login success');
   } else {
-    alert('Wrong PIN');
+    alert('Wrong password');
+    logActivity('Admin login failed');
   }
 });

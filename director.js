@@ -3,7 +3,7 @@ const schoolList = document.getElementById('schoolList');
 
 function renderSchools() {
   const schools = citySchools[city.value] || [];
-  schoolList.innerHTML = schools.map((name, index) => `<li><span>${index + 1}. ${name}</span><b>${index === 5 ? 'School №6 highlighted' : ''}</b></li>`).join('');
+  schoolList.innerHTML = schools.map((name, index) => `<li><span>${index + 1}. ${name}</span><b>${index + 1 <= 7 ? 'active' : ''}</b></li>`).join('');
 }
 
 function renderMetrics() {
