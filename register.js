@@ -2,10 +2,10 @@ const form = document.getElementById('registerForm');
 const usersList = document.getElementById('usersList');
 
 function renderUsers() {
-  const users = JSON.parse(localStorage.getItem('ecobala_users') || '[]');
+  const users = getUsers();
   usersList.innerHTML = users.length
-    ? users.map((u) => `<li><span>${u.name} · ${u.age} лет · ${u.school}</span><b>${u.city}</b></li>`).join('')
-    : '<li><span>Пока нет зарегистрированных учеников</span><b>—</b></li>';
+    ? users.map((u) => `<li><span>${u.name} · ${u.age} · ${u.school}</span><b>${u.city}</b></li>`).join('')
+    : `<li><span>${t('noUsers')}</span><b>—</b></li>`;
 }
 
 form?.addEventListener('submit', (e) => {
@@ -14,7 +14,10 @@ form?.addEventListener('submit', (e) => {
   registerUser(payload);
   form.reset();
   renderUsers();
-  alert('Регистрация успешна!');
+  alert(`${t('registerBtn')} ✓`);
 });
 
-renderUsers();
+document.addEventListener('DOMContentLoaded', renderUsers);
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.lang-btn')) setTimeout(renderUsers, 0);
+});

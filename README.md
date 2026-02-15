@@ -1,28 +1,37 @@
-# EcoBala — образовательная эко-платформа для школьников Казахстана
+# EcoBala — Multilingual Adaptive Eco Platform
 
-Демо-прототип платформы с заданиями, регистрацией, картой Казахстана, фото-отчетами и логическими играми.
+Updated prototype with a beautiful responsive design, multilingual UI (RU/EN/KZ), admin panel, registration zone, tasks, games and photo reports.
 
-## Реализовано
+## Implemented
 
-- Главная страница с обзором возможностей и эко-метрик.
-- Отдельная страница регистрации (`register.html`) с сохранением в локальную БД браузера (`localStorage`).
-- Отдельная страница задач (`tasks.html`) с карточками заданий и загрузкой фото-отчета.
-- Страница игр (`games.html`) с мини-игрой и логической викториной.
-- Карта Казахстана на главной странице (SVG) с городскими точками.
+- Fully adaptive interface for desktop/tablet/mobile.
+- Modern typography (`Manrope`, `Nunito`) and refreshed CSS across all pages.
+- Multilingual switcher (Russian, English, Kazakh).
+- Mobile bottom navigation with **Home** item.
+- Registration page with local DB (`localStorage`).
+- Tasks page with image upload and local photo report saving.
+- Games page with logic mini-games.
+- Admin panel for users and reports monitoring.
+- Removed the previous “Ecological contribution today” block from homepage.
 
-## Файлы
+## Pages
 
-- `index.html` — главная страница.
-- `register.html`, `register.js` — регистрация и список участников.
-- `tasks.html`, `tasks.js` — задачи и фото-отчеты.
-- `games.html`, `games.js` — игровые сценарии.
-- `database.js` — простая локальная БД (через `localStorage`).
-- `styles.css` — общий дизайн.
+- `index.html` — home page.
+- `register.html` — registration.
+- `tasks.html` — tasks and photo upload.
+- `games.html` — logic games.
+- `admin.html` — admin panel.
 
-## Запуск
+## Scripts
+
+- `database.js` — local data storage layer.
+- `i18n.js` — multilingual translation layer.
+- `register.js`, `tasks.js`, `games.js`, `admin.js` — page logic.
+
+## Run
 
 ```bash
 python -m http.server 4173
 ```
 
-Откройте `http://localhost:4173`.
+Open `http://localhost:4173`.

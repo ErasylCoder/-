@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala — Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html">🌿 <span>EcoBala</span></a><nav><a href="index.html" data-i18n="navHome">Главная</a><a href="tasks.html" data-i18n="navTasks">Задачи</a><a href="games.html" data-i18n="navGames">Игры</a><a href="register.html" data-i18n="navRegister">Регистрация</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<main class="container panel">
+  <h1 data-i18n="adminTitle">Админ-панель</h1>
+  <p class="muted" data-i18n="adminDesc">Просмотр зарегистрированных пользователей и фото-отчетов.</p>
+
+  <div class="grid two">
+    <section class="card stat-card"><h3 data-i18n="usersCount">Пользователи</h3><p id="usersCount" class="big">0</p></section>
+    <section class="card stat-card"><h3 data-i18n="reportsCount">Отчеты</h3><p id="reportsCount" class="big">0</p></section>
+  </div>
+
+  <section class="card" style="margin-top:1rem">
+    <h3 data-i18n="users">Зарегистрированные участники</h3>
+    <ul id="adminUsers" class="quests"></ul>
+  </section>
+
+  <section class="card" style="margin-top:1rem">
+    <h3 data-i18n="upload">Фото-отчеты</h3>
+    <div id="adminReports" class="reports-grid"></div>
+  </section>
+</main>
+<nav class="mobile-nav">
+  <a href="index.html" data-i18n="mobileHome">Главная</a>
+  <a href="tasks.html" data-i18n="navTasks">Задачи</a>
+  <a href="games.html" data-i18n="navGames">Игры</a>
+  <a href="register.html" data-i18n="navRegister">Регистрация</a>
+</nav>
+<script src="database.js"></script>
+<script src="i18n.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

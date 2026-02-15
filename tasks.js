@@ -38,8 +38,9 @@ reportForm?.addEventListener('submit', (e) => {
       comment: fd.get('comment'),
       photoBase64: reader.result
     });
-    alert('Фото-отчет сохранен в локальной базе!');
+    alert(t('done'));
     reportForm.reset();
+    previewWrap.innerHTML = '';
   };
   reader.readAsDataURL(photo);
 });
