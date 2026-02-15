@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala — экологическая платформа для школ Казахстана</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">🌿 <span>EcoBala</span></div>
+      <nav>
+        <a href="#student">Ученику</a>
+        <a href="#school">Школе</a>
+        <a href="#city">Карта</a>
+        <a href="#games">Игры</a>
+      </nav>
+      <button class="btn btn-primary">Присоединиться</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <p class="chip">Объединяем школы Казахстана</p>
+        <h1>Играй, помогай природе и зарабатывай баллы</h1>
+        <p class="muted">Современная образовательная онлайн-платформа для школьников 7–17 лет: задания, рейтинги, награды и экологические привычки в игровом формате.</p>
+        <div class="actions">
+          <button class="btn btn-primary">Я ребенок</button>
+          <button class="btn btn-secondary">Я подросток</button>
+        </div>
+      </div>
+      <div class="hero-card glass">
+        <h3>Экологический вклад сегодня</h3>
+        <div class="stats">
+          <div><strong>1 248</strong><span>участников</span></div>
+          <div><strong>5 930</strong><span>выполнено заданий</span></div>
+          <div><strong>2 410</strong><span>посажено деревьев</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="student" class="container panel">
+      <h2>Личный кабинет ученика</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Активные задания</h3>
+          <ul class="quests">
+            <li><span>🧹 Убрать школьный двор</span><b>+120</b></li>
+            <li><span>💧 Экономить воду 7 дней</span><b>+180</b></li>
+            <li><span>♻️ Сортировать мусор дома</span><b>+150</b></li>
+            <li><span>🌳 Посадить дерево</span><b>+300</b></li>
+          </ul>
+          <button class="btn btn-primary">Загрузить отчет</button>
+        </article>
+        <article class="card">
+          <h3>Прогресс и награды</h3>
+          <div class="progress-wrap">
+            <p>Уровень эко-героя: <b>7</b></p>
+            <div class="progress"><span style="width:72%"></span></div>
+          </div>
+          <div class="reward-list">
+            <div class="pill">🪙 7 550 eco-coins</div>
+            <div class="pill">🏅 Значок «Берегу воду»</div>
+            <div class="pill">🏆 Топ-5 класса</div>
+          </div>
+          <button class="btn btn-secondary">Обменять баллы на бонусы</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="school" class="container panel">
+      <h2>Панель школы и директора</h2>
+      <div class="grid three">
+        <article class="card"><h4>Экологический рейтинг</h4><p class="big">#2 в районе</p></article>
+        <article class="card"><h4>Высажено деревьев</h4><p class="big">743</p></article>
+        <article class="card"><h4>Сэкономлено воды</h4><p class="big">86 000 л</p></article>
+      </div>
+    </section>
+
+    <section id="city" class="container panel">
+      <h2>Городской уровень</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Карта экологической активности</h3>
+          <div class="map-mock">
+            <div class="dot almaty">Алматы</div>
+            <div class="dot astana">Астана</div>
+            <div class="dot shymkent">Шымкент</div>
+            <div class="dot karaganda">Караганда</div>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Рейтинг городов</h3>
+          <ol class="rankings">
+            <li><span>Алматы</span><b>98 200</b></li>
+            <li><span>Астана</span><b>93 160</b></li>
+            <li><span>Шымкент</span><b>89 740</b></li>
+            <li><span>Караганда</span><b>84 510</b></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="container panel">
+      <h2>Игровой обучающий раздел</h2>
+      <div class="grid three">
+        <article class="card game"><h4>🧠 Эко-головоломка</h4><p>Собери правильную цепочку переработки.</p></article>
+        <article class="card game"><h4>🚰 Водный симулятор</h4><p>Покажи, как экономить воду в быту и школе.</p></article>
+        <article class="card game"><h4>⚡ Энергоквест</h4><p>Найди приборы, которые тратят электричество зря.</p></article>
+      </div>
+      <div class="scenario">
+        <h3>Интерактивный сценарий: «Что будет, если не беречь воду?»</h3>
+        <p id="scenarioText">Нажмите кнопку и увидьте два сценария будущего.</p>
+        <button id="toggleScenario" class="btn btn-primary">Показать сценарий</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>EcoBala · Экология через игру · Казахстан 🇰🇿</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
