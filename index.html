@@ -19,6 +19,7 @@
         <a href="tasks.html" data-i18n="tasks">Задачи</a>
         <a href="games.html" data-i18n="games">Игры</a>
         <a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a>
       </nav>
       <div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div>
     </div>
@@ -40,6 +41,8 @@
         <p class="muted" data-i18n="regHint">Заполните данные и начните путь эко-героя.</p>
         <form id="registerForm" class="form-grid">
           <label><span data-i18n="name">Имя ученика</span><input name="name" required /></label>
+          <label><span>Email</span><input name="email" type="email" required /></label>
+          <label><span>Password</span><input name="password" type="password" minlength="8" required /></label>
           <label><span data-i18n="age">Возраст</span><input name="age" type="number" min="7" max="17" required /></label>
           <label><span data-i18n="role">Роль</span><select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select></label>
           <label><span data-i18n="city">Город</span><select id="citySelect" name="city" required><option value="Chromtau">Хромтау</option></select></label>
@@ -105,6 +108,7 @@
     <a href="tasks.html" data-i18n="tasks">Задачи</a>
     <a href="games.html" data-i18n="games">Игры</a>
     <a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a>
   </nav>
 
   <footer><div class="container"><p data-i18n="footer">EcoBala · Казахстан</p></div></footer>

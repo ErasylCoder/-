@@ -1,34 +1,63 @@
-# EcoBala — production-style adaptive eco platform
+# EcoBala — production-grade adaptive eco platform
 
-Updated version with polished UI, responsive layout for all devices, animated puzzle games, private admin access, eco news and FAQ.
+Refactored as a more professional full-stack style prototype: secure auth API (Express), responsive UX, eco content, and a browser 3D game.
 
-## Implemented
+## Technical audit improvements
 
-- Modern responsive design for phone, tablet, laptop and large monitor.
-- Registration-first landing experience.
-- Added EcoBala emblem and favicon.
-- Added motivational animated eco phrases and happy student/teacher photo section.
-- Added **Kazakhstan eco news** section on homepage.
-- Added **FAQ** section with expandable answers.
-- City/school setup for Chromtau with school list №1 ... №7 (including №5 and №6).
-- Puzzle game with animations + recycling mini-game.
-- Private admin panel with password access (`52295229`).
-- Director dashboard with school-level monitoring.
-- Activity tracking: who did what and when (for admin view).
-- RU / EN / KZ multilingual interface.
+- Refactored frontend styling to a consistent design system (glassmorphism + mobile-first).
+- Improved modularity with separated backend files: `server/app.js`, `server/security.js`, `server/store.js`.
+- Added basic security controls:
+  - password hashing with `crypto.scrypt`,
+  - CSRF protection token flow,
+  - input sanitization for XSS mitigation,
+  - timing-safe hash compare,
+  - simple request rate limiting,
+  - secure cookie flags (`HttpOnly`, `SameSite`).
+
+## Full-stack features
+
+- Registration + login endpoints (`/api/auth/register`, `/api/auth/login`, `/api/auth/logout`, `/api/auth/me`).
+- Registration forms integrated in UI (`index.html`, `register.html`) and auth page (`auth.html`).
+- Local activity/report features preserved for school demo flows.
+
+## UX / UI
+
+- Fully responsive layout from mobile (320px) to large desktop / 4K-friendly containers.
+- Grid + Flex architecture and modern font stack (Inter, Poppins, Montserrat).
+- Animated eco phrases, Kazakhstan eco news, FAQ section, smooth transitions.
+- Improved visual hierarchy, cards, and navigation patterns.
+
+## 3D Game
+
+- Added browser 3D game (`game3d.js`, loaded from `games.html`) using Three.js:
+  - WASD controls,
+  - third-person camera follow,
+  - dynamic lighting and shadows,
+  - collectible scoring system,
+  - win/lose conditions,
+  - HUD with score and timer,
+  - simple collision handling against obstacles.
 
 ## Pages
 
-- `index.html` — main landing + registration + news + FAQ.
+- `index.html` — landing, registration, eco news, FAQ.
+- `auth.html` — email/password authentication UI.
 - `tasks.html` — tasks + photo reports.
-- `games.html` — game/puzzle page.
-- `director.html` — director analytics page.
+- `games.html` — mini games + 3D game module.
+- `director.html` — director monitoring.
 - `admin.html` — private admin panel.
 
 ## Run
 
+### Frontend (static)
 ```bash
 python -m http.server 4173
+```
+
+### Full-stack mode (Express)
+```bash
+npm install
+npm run start
 ```
 
 Open `http://localhost:4173`.

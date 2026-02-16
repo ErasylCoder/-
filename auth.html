@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala Auth</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a></div></header>
+<main class="container panel">
+  <section class="grid two">
+    <article class="card">
+      <h2>Sign in</h2>
+      <form id="loginForm" class="form-grid">
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+    </article>
+    <article class="card">
+      <h2>Create account</h2>
+      <form id="registerAuthForm" class="form-grid">
+        <label>Username<input name="username" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" minlength="8" required /></label>
+        <button class="btn btn-secondary" type="submit">Register</button>
+      </form>
+    </article>
+  </section>
+</main>
+<script src="auth.js"></script>
+</body>
+</html>

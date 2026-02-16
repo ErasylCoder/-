@@ -9,13 +9,16 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
 
 <main class="container panel">
   <h1 data-i18n="regTitle">Регистрация</h1>
   <p class="muted" data-i18n="regHint">Заполните данные и начните путь эко-героя.</p>
   <form id="registerForm" class="card form-grid register-box">
     <label><span data-i18n="name">Имя ученика</span><input required name="name" /></label>
+    <label><span>Email</span><input required name="email" type="email" /></label>
+    <label><span>Password</span><input required name="password" type="password" minlength="8" /></label>
     <label><span data-i18n="age">Возраст</span><input required name="age" type="number" min="7" max="17" /></label>
     <label><span data-i18n="role">Роль</span><select name="role"><option data-i18n="child">Ребенок</option><option data-i18n="teen">Подросток</option></select></label>
     <label><span data-i18n="city">Город</span><select id="citySelect" name="city"><option value="Chromtau">Хромтау</option></select></label>
@@ -24,7 +27,8 @@
   </form>
 </main>
 
-<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a></nav>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a></nav>
 
 <script src="database.js"></script>
 <script src="i18n.js"></script>

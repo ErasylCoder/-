@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
 <main class="container panel">
   <h1 data-i18n="gamesTitle">Игры и головоломки</h1>
   <div class="grid two">
@@ -35,11 +36,25 @@
       <p id="puzzleStatus" class="muted"></p>
     </section>
   </div>
+
+  <section class="card" style="margin-top:1rem">
+      <h3>3D Eco Runner (WASD)</h3>
+      <p>Собери все зеленые сферы, избегай препятствий. Камера от третьего лица, очки и таймер в HUD.</p>
+      <div class="hud">
+        <div>Score: <b id="hudScore">0</b></div>
+        <div>Time: <b id="hudTimer">120</b></div>
+      </div>
+      <div id="game3d" class="game3d"></div>
+      <p id="hudState" class="muted">Начни движение клавишами WASD.</p>
+    </section>
+
 </main>
-<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" class="active" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a></nav>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" class="active" data-i18n="games">Игры</a><a href="director.html" data-i18n="director">Директор</a>
+        <a href="auth.html">Auth</a></nav>
 <script src="database.js"></script>
 <script src="i18n.js"></script>
 <script src="games.js"></script>
+<script type="module" src="game3d.js"></script>
 <script>logActivity('Open games page');</script>
 </body>
 </html>
