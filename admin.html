@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala — Админ панелі</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<main class="container panel">
+  <section id="adminGate" class="card register-box">
+    <h1 data-i18n="adminTitle">Админ-панель</h1>
+    <p class="muted" data-i18n="adminDesc">Только для владельца.</p>
+    <form id="pinForm" class="form-grid"><label>Құпиясөз<input id="pinInput" type="password" required /></label><button class="btn btn-primary" type="submit">Кіру</button></form>
+  </section>
+
+  <section id="adminContent" class="hidden">
+    <h1 data-i18n="adminTitle">Админ-панель</h1>
+    <div class="grid three">
+      <article class="card"><h3 data-i18n="usersCount">Пользователи</h3><p id="usersCount" class="big">0</p></article>
+      <article class="card"><h3 data-i18n="reportsCount">Отчеты</h3><p id="reportsCount" class="big">0</p></article>
+      <article class="card"><h3 data-i18n="logsCount">События</h3><p id="logsCount" class="big">0</p></article>
+    </div>
+    <section class="card" style="margin-top:1rem"><h3 data-i18n="activity">Лента активности</h3><ul id="activityList" class="quests"></ul></section>
+    <section class="card" style="margin-top:1rem"><h3 data-i18n="users">Участники</h3><ul id="adminUsers" class="quests"></ul></section>
+    <section class="card" style="margin-top:1rem"><h3 data-i18n="upload">Фото-отчеты</h3><div id="adminReports" class="reports-grid"></div></section>
+  </section>
+</main>
+<script src="database.js"></script>
+<script src="i18n.js"></script>
+<script src="admin.js"></script>
+<script>logActivity('Админ беті ашылды');</script>
+</body>
+</html>

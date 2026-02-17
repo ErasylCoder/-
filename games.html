@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoBala — Ойындар</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><img src="assets/ecobala-logo.svg" alt="logo"/><span>EcoBala</span></a><nav><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="auth.html" data-i18n="auth">Кіру</a></nav><div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="kz">KZ</button></div></div></header>
+<main class="container panel">
+  <h1 data-i18n="gamesTitle">Игры и головоломки</h1>
+  <div class="grid two">
+    <section class="card">
+      <h3>♻️ Эко-таңдау</h3>
+      <p data-i18n="gameRule1">Выберите перерабатываемый предмет.</p>
+      <div class="actions">
+        <button class="btn btn-secondary guess" data-ok="1">Пластик бөтелке</button>
+        <button class="btn btn-secondary guess" data-ok="0">Лас майлық</button>
+        <button class="btn btn-secondary guess" data-ok="0">Аралас қоқыс</button>
+      </div>
+      <p id="guessResult" class="muted"></p>
+    </section>
+
+    <section class="card puzzle-card">
+      <h3 data-i18n="puzzleTitle">Головоломка: собери путь к чистому будущему</h3>
+      <p data-i18n="gameRule2">Нажмите блоки в порядке: Вода → Деревья → Чистый город.</p>
+      <div class="puzzle-grid" id="puzzleGrid">
+        <button class="puzzle-piece" data-step="2">🌳 Ағаштар</button>
+        <button class="puzzle-piece" data-step="1">💧 Су</button>
+        <button class="puzzle-piece" data-step="3">🏙️ Таза қала</button>
+      </div>
+      <p id="puzzleStatus" class="muted"></p>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:1rem">
+    <h3>3D Эко кейіпкер ойыны (WASD)</h3>
+    <p>Жасыл сферлерді жинап, кедергілерден айналып өтіңіз.</p>
+    <div class="hud">
+      <div>Ұпай: <b id="hudScore">0</b></div>
+      <div>Уақыт: <b id="hudTimer">120</b></div>
+      <div>Комбо: <b id="hudCombo">x1</b></div>
+    </div>
+    <div id="game3d" class="game3d"></div>
+    <p id="hudState" class="muted">WASD пернелерімен қозғалысты бастаңыз.</p>
+  </section>
+</main>
+<nav class="mobile-nav"><a href="index.html" data-i18n="home">Главная</a><a href="tasks.html" data-i18n="tasks">Задачи</a><a href="games.html" class="active" data-i18n="games">Игры</a></nav>
+<script src="database.js"></script>
+<script src="i18n.js"></script>
+<script src="games.js"></script>
+<script type="module" src="game3d.js"></script>
+<script>logActivity('Ойындар беті ашылды');</script>
+</body>
+</html>
