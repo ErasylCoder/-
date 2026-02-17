@@ -22,7 +22,7 @@ function renderAdmin() {
 
   document.getElementById('adminReports').innerHTML = reports.length
     ? reports.map((r) => `<article class="card"><p><b>${new Date(r.createdAt).toLocaleString()}</b></p><p>Task: ${r.taskId}</p><p>${r.comment || ''}</p>${r.photoBase64 ? `<img class="preview-img" src="${r.photoBase64}" alt="report"/>` : ''}</article>`).join('')
-    : '<p class="muted">No reports yet.</p>';
+    : '<p class="muted">Әзірге есептер жоқ.</p>';
 }
 
 pinForm?.addEventListener('submit', (event) => {
@@ -33,7 +33,7 @@ pinForm?.addEventListener('submit', (event) => {
     renderAdmin();
     logActivity('Admin login success');
   } else {
-    alert('Wrong password');
+    alert('Құпиясөз қате');
     logActivity('Admin login failed');
   }
 });

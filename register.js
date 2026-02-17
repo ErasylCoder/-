@@ -19,9 +19,9 @@ function populateSchools() {
 }
 
 function validateForm(payload) {
-  if (!payload.username || payload.username.length < 3) return 'Username must be at least 3 characters';
-  if (!/^\S+@\S+\.\S+$/.test(payload.email)) return 'Invalid email';
-  if (!payload.password || payload.password.length < 8) return 'Password must be at least 8 characters';
+  if (!payload.username || payload.username.length < 3) return 'Аты кемінде 3 таңба болуы керек';
+  if (!/^\S+@\S+\.\S+$/.test(payload.email)) return 'Эл. пошта форматы қате';
+  if (!payload.password || payload.password.length < 8) return 'Құпиясөз кемінде 8 таңба болуы керек';
   return null;
 }
 
@@ -58,7 +58,7 @@ form?.addEventListener('submit', async (event) => {
 
     const data = await response.json();
     if (!response.ok) {
-      alert(data.error || 'Registration failed');
+      alert(data.error || 'Тіркелу сәтсіз аяқталды');
       return;
     }
 
@@ -71,12 +71,12 @@ form?.addEventListener('submit', async (event) => {
     });
     logActivity('User registration', { userName: localUser.name });
 
-    alert('Registration completed successfully');
+    alert('Тіркелу сәтті аяқталды');
     form.reset();
     populateSchools();
     location.href = 'tasks.html';
   } catch {
-    alert('Network or server error');
+    alert('Желі немесе сервер қатесі');
   }
 });
 

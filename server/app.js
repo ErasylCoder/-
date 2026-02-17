@@ -28,7 +28,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-  if (!rateLimitCheck(req.ip)) return res.status(429).json({ error: 'Too many requests' });
+  if (!rateLimitCheck(req.ip)) return res.status(429).json({ error: 'Сұрау тым көп' });
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'same-origin');
@@ -70,7 +70,7 @@ function csrfMiddleware(req, res, next) {
   const expected = getCsrf(sidOrGuest);
   const received = req.headers['x-csrf-token'];
   if (!expected || !received || !timingSafeEqual(expected, String(received))) {
-    return res.status(403).json({ error: 'Invalid CSRF token' });
+    return res.status(403).json({ error: 'CSRF токені жарамсыз' });
   }
   next();
 }
@@ -97,10 +97,10 @@ app.post('/api/auth/register', csrfMiddleware, async (req, res) => {
     const email = sanitize(String(req.body.email || '').toLowerCase());
     const password = String(req.body.password || '');
 
-    if (username.length < 3) return res.status(400).json({ error: 'Username too short' });
-    if (!validateEmail(email)) return res.status(400).json({ error: 'Invalid email' });
-    if (password.length < 8) return res.status(400).json({ error: 'Password must be at least 8 chars' });
-    if (findUserByEmail(email)) return res.status(409).json({ error: 'User already exists' });
+    if (username.length < 3) return res.status(400).json({ error: 'Аты тым қысқа' });
+    if (!validateEmail(email)) return res.status(400).json({ error: 'Эл. пошта қате' });
+    if (password.length < 8) return res.status(400).json({ error: 'Құпиясөз кемінде 8 таңба' });
+    if (findUserByEmail(email)) return res.status(409).json({ error: 'Пайдаланушы бар' });
 
     const salt = createSalt();
     const hash = await hashPassword(password, salt);
@@ -119,7 +119,7 @@ app.post('/api/auth/register', csrfMiddleware, async (req, res) => {
 
     res.status(201).json({ ok: true, user: { id: user.id, username: user.username, email: user.email } });
   } catch {
-    res.status(500).json({ error: 'Internal error' });
+    res.status(500).json({ error: 'Ішкі қате' });
   }
 });
 
@@ -127,10 +127,10 @@ app.post('/api/auth/login', csrfMiddleware, async (req, res) => {
   const email = sanitize(String(req.body.email || '').toLowerCase());
   const password = String(req.body.password || '');
   const user = findUserByEmail(email);
-  if (!user) return res.status(401).json({ error: 'Invalid credentials' });
+  if (!user) return res.status(401).json({ error: 'Деректер қате' });
 
   const hash = await hashPassword(password, user.salt);
-  if (!timingSafeEqual(hash, user.hash)) return res.status(401).json({ error: 'Invalid credentials' });
+  if (!timingSafeEqual(hash, user.hash)) return res.status(401).json({ error: 'Деректер қате' });
 
   const sid = randomToken(24);
   createSession(user.id, sid);

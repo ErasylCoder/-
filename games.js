@@ -1,43 +1,38 @@
 const guessResult = document.getElementById('guessResult');
 const puzzleStatus = document.getElementById('puzzleStatus');
 
-function msg(okRu, badRu, okEn, badEn, okKz, badKz, isOk) {
-  const lang = getLang();
-  if (lang === 'en') return isOk ? okEn : badEn;
-  if (lang === 'kz') return isOk ? okKz : badKz;
-  return isOk ? okRu : badRu;
+function gameMessage(ok) {
+  return ok ? t('gameGood') : t('gameBad');
 }
 
 document.querySelectorAll('.guess').forEach((button) => {
   button.addEventListener('click', () => {
     const isOk = button.dataset.ok === '1';
-    guessResult.textContent = msg(
-      '✅ Верно! Пластик можно перерабатывать.', '❌ Неверно, попробуй снова.',
-      '✅ Correct! Plastic can be recycled.', '❌ Wrong, try again.',
-      '✅ Дұрыс! Пластик қайта өңделеді.', '❌ Қате, қайта көріңіз.',
-      isOk
-    );
+    guessResult.textContent = gameMessage(isOk);
+    guessResult.style.color = isOk ? '#12a150' : '#d95555';
+    button.classList.add(isOk ? 'ok' : 'shake');
+    setTimeout(() => button.classList.remove('ok', 'shake'), 500);
     logActivity('Play recycle game', { correct: isOk });
   });
 });
 
 let puzzleStep = 1;
+let streak = 0;
 
 document.querySelectorAll('.puzzle-piece').forEach((piece) => {
   piece.addEventListener('click', () => {
     const step = Number(piece.dataset.step);
     if (step === puzzleStep) {
       piece.classList.add('ok');
-      puzzleStep += 1;
       piece.disabled = true;
-      if (puzzleStep === 4) {
-        puzzleStatus.textContent = '🎉 Отлично! Ты построил путь к чистому будущему!';
-        logActivity('Solve puzzle game', { result: 'completed' });
-      } else {
-        puzzleStatus.textContent = 'Хорошо! Продолжай.';
-      }
+      puzzleStep += 1;
+      streak += 1;
+      puzzleStatus.textContent = streak < 3 ? 'Керемет! Жалғастырыңыз.' : '🎉 Жеңіс! Таза болашақ жолын құрдыңыз!';
+      puzzleStatus.style.color = '#0f9d58';
+      if (streak >= 3) logActivity('Solve puzzle game', { result: 'completed' });
     } else {
-      puzzleStatus.textContent = 'Попробуй другой порядок.';
+      puzzleStatus.textContent = gameMessage(false);
+      puzzleStatus.style.color = '#d95555';
       logActivity('Puzzle wrong step', { clicked: step, expected: puzzleStep });
     }
   });

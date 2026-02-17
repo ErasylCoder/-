@@ -20,7 +20,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const f = Object.fromEntries(new FormData(e.target).entries());
   const { ok, data } = await post('/api/auth/login', f);
-  if (!ok) return alert(data.error || 'Login failed');
+  if (!ok) return alert(data.error || 'Кіру сәтсіз');
   location.href = 'index.html';
 });
 
@@ -28,8 +28,8 @@ document.getElementById('registerAuthForm')?.addEventListener('submit', async (e
   e.preventDefault();
   const f = Object.fromEntries(new FormData(e.target).entries());
   const { ok, data } = await post('/api/auth/register', f);
-  if (!ok) return alert(data.error || 'Registration failed');
+  if (!ok) return alert(data.error || 'Тіркелу сәтсіз');
   location.href = 'index.html';
 });
 
-loadCsrf().catch(() => alert('Could not initialize CSRF token'));
+loadCsrf().catch(() => alert('CSRF токенді алу мүмкін болмады'));
