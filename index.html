@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
         <a href="index.html" data-i18n="home">Главная</a>
         <a href="tasks.html" data-i18n="tasks">Задачи</a>
         <a href="games.html" data-i18n="games">Игры</a>
-        <a href="director.html" data-i18n="director">Директор</a>
         <a href="auth.html" data-i18n="auth">Кіру</a>
       </nav>
       <div class="lang-switch"><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="kz">KZ</button></div>
@@ -29,17 +28,22 @@
     <section class="founders card center"><p data-i18n="founders">Основатели / CEO: Amirtay.E, Ermukhanov.M</p></section>
 
     <section class="hero grid two">
-      <article class="card">
+      <article class="card clean-hero">
         <p class="chip" data-i18n="slogan">Маленькие шаги к большому будущему</p>
-        <h1 data-i18n="heroTitle">EcoBala — платформа для умных и добрых экопривычек</h1>
-        <p class="muted" data-i18n="heroText">Ученики, родители и учителя объединяются ради чистого и здорового будущего.</p>
+        <h1 data-i18n="heroTitle">EcoBala — платформа для экологичного будущего</h1>
+        <p class="muted" data-i18n="heroText">Играйте, помогайте природе и развивайте полезные привычки вместе со школой.</p>
         <img class="hero-logo" src="assets/ecobala-logo.svg" alt="EcoBala emblem" />
+        <div class="mini-stats">
+          <div><b>320+</b><span>қатысушы</span></div>
+          <div><b>450+</b><span>тапсырма</span></div>
+          <div><b>120+</b><span>ағаш</span></div>
+        </div>
       </article>
 
-      <article class="card register-panel">
+      <article class="card google-form-card register-panel">
         <h2 data-i18n="regTitle">Регистрация</h2>
         <p class="muted" data-i18n="regHint">Заполните данные и начните путь эко-героя.</p>
-        <form id="registerForm" class="form-grid">
+        <form id="registerForm" class="form-grid google-form">
           <label><span data-i18n="name">Имя ученика</span><input name="name" required /></label>
           <label><span>Эл. пошта</span><input name="email" type="email" required /></label>
           <label><span>Құпиясөз</span><input name="password" type="password" minlength="8" required /></label>
@@ -50,15 +54,6 @@
           <button class="btn btn-primary" type="submit" data-i18n="submit">Начать путь</button>
         </form>
       </article>
-    </section>
-
-    <section class="panel">
-      <h2 data-i18n="studentsTitle">Счастливые ученики и учителя</h2>
-      <div class="grid three photo-grid">
-        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="happy students" /></article>
-        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80" alt="teacher with students" /></article>
-        <article class="card photo-card"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80" alt="school kids" /></article>
-      </div>
     </section>
 
     <section class="panel">
@@ -87,28 +82,13 @@
         <details class="faq-item"><summary data-i18n="faq3Q">Можно ли участвовать всей семьей?</summary><p data-i18n="faq3A">Да, семейные эко-активности приветствуются и дают дополнительную мотивацию.</p></details>
       </div>
     </section>
-
-    <section class="panel">
-      <h2 data-i18n="mapTitle">Карта экологической активности</h2>
-      <div class="card">
-        <svg class="kz-map" viewBox="0 0 900 420" role="img" aria-label="Kazakhstan map">
-          <path d="M44 220 L118 190 L180 138 L286 138 L364 82 L458 98 L538 70 L608 94 L734 68 L818 112 L862 178 L814 250 L746 292 L628 280 L560 328 L452 332 L368 302 L250 314 L150 282 Z"/>
-          <circle cx="300" cy="200" r="10" class="city-dot"/><text x="315" y="205">Karaganda</text>
-          <circle cx="520" cy="145" r="10" class="city-dot"/><text x="535" y="150">Astana</text>
-          <circle cx="220" cy="300" r="10" class="city-dot"/><text x="235" y="305">Shymkent</text>
-          <circle cx="420" cy="315" r="10" class="city-dot"/><text x="435" y="320">Almaty</text>
-        </svg>
-        <p class="muted" data-i18n="mapDesc">Казахстан объединяется ради зеленого будущего.</p>
-      </div>
-    </section>
   </main>
 
   <nav class="mobile-nav">
     <a href="index.html" class="active" data-i18n="home">Главная</a>
     <a href="tasks.html" data-i18n="tasks">Задачи</a>
     <a href="games.html" data-i18n="games">Игры</a>
-    <a href="director.html" data-i18n="director">Директор</a>
-        <a href="auth.html" data-i18n="auth">Кіру</a>
+    <a href="auth.html" data-i18n="auth">Кіру</a>
   </nav>
 
   <footer><div class="container"><p data-i18n="footer">EcoBala · Казахстан</p></div></footer>
