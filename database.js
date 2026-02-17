@@ -20,10 +20,10 @@ const citySchools = {
 };
 
 const seedTasks = [
-  { id: 1, title: 'Clean school yard', points: 120, level: 'Easy', topic: 'School territory' },
-  { id: 2, title: 'Save water for 7 days', points: 180, level: 'Medium', topic: 'Water saving' },
-  { id: 3, title: 'Plant a tree', points: 300, level: 'Medium', topic: 'Greening' },
-  { id: 4, title: 'Recycle paper', points: 150, level: 'Easy', topic: 'Waste sorting' }
+  { id: 1, title: 'Мектеп ауласын тазарту', points: 120, level: 'Жеңіл', topic: 'Мектеп аумағы' },
+  { id: 2, title: '7 күн су үнемдеу', points: 180, level: 'Орта', topic: 'Су үнемдеу' },
+  { id: 3, title: 'Ағаш отырғызу', points: 300, level: 'Орта', topic: 'Көгалдандыру' },
+  { id: 4, title: 'Қағазды қайта өңдеу', points: 150, level: 'Жеңіл', topic: 'Қоқысты сұрыптау' }
 ];
 
 function readDB(key, fallback = []) {
